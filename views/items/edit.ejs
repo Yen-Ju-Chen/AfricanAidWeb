@@ -1,0 +1,50 @@
+<% layout('/layouts/boilerplate')%> 
+    <div class="row">
+        <h3 class="text-center">提案修改</h3>
+        <form action="/items/<%=item._id%>?_method=PUT" method="POST" novalidate class="validated-form">
+      <div class="col-6 offset-3">
+        <div class="mb-3"> 
+          <label  class="form-label" for="專案名稱">專案名稱</label>
+          <input id="insertproductName" type="text" maxlength="8" placeholder="（最多8字）" class="form-control" name="item[title]"  value="<%=item.title%>" required></input>
+          <div class="valid-feedback">
+            Looks good!
+          </div>
+        </div>
+        <div class="mb-3"> 
+          <label  class="form-label" for="ID">ID</label>
+          <input id="insertID" type="text" class="form-control" maxlength="8" placeholder=" 123 " name="item[seller]" value="<%=item.seller%>" required></input>
+          <div class="valid-feedback">
+            Looks good!
+          </div>
+        </div>
+        <div class="mb-3">
+            <label class="form-label"  for="image">Image Url</label>
+            <input class="form-control" type="text" id="image" name="item[image]" value="<%=item.image%>" required>
+            <div class="valid-feedback">
+              Looks good!
+            </div>
+        </div>
+        <div class="mb-3">
+          <label class="form-label"  for="price">募資金額</label>
+      <div class="input-group">
+          <span class="input-group-text" id="insertPrice">$</span>
+          <input type="number" class="form-control" aria-label="price" aria-describedby="price-label" name="item[price]" value="<%=item.price%>" required>
+          <div class="valid-feedback">
+            Looks good!
+          </div>
+      </div> 
+       </div>  
+        <div class="mb-3"> 
+            <label  class="form-label" for="description">專案內容描述</label>
+            <textarea class="form-control" id="insertproductInfo" type="text" cols="32" rows="2" maxlength="300" placeholder="Ex:計畫緣起、內容、受益對象(300字)" name="item[description]" value="<%=item.description%>" required></textarea>
+            <div class="valid-feedback">
+              Looks good!
+            </div>
+        </div>
+        <div class="mb-3">     
+            <button class="btn btn-warning" id="edit">Update</button>
+        </div>
+    </form>
+    <a href="/items/<%=item._id%>">Back to the Program</a>
+        </div>
+      </div>
